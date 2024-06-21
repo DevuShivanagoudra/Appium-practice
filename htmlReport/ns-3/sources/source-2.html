@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ChooseYourLanguageScreenBase</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.testing.mobile.screens.chooseyourlanguage</a>
+</div>
+
+<h1>Coverage Summary for Class: ChooseYourLanguageScreenBase (com.testing.mobile.screens.chooseyourlanguage)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChooseYourLanguageScreenBase</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.testing.mobile.screens.chooseyourlanguage;
+&nbsp;
+&nbsp;import com.testing.mobile.common.ChooseYourLanguage;
+&nbsp;import com.testing.mobile.screens.BaseScreen;
+&nbsp;import io.appium.java_client.AppiumBy;
+&nbsp;import io.appium.java_client.AppiumDriver;
+&nbsp;import io.appium.java_client.pagefactory.AndroidFindBy;
+&nbsp;import org.openqa.selenium.WebElement;
+&nbsp;
+&nbsp;/**
+&nbsp; * This is &#39;ChooseYourLanguageScreenBase&#39; class.
+&nbsp; */
+&nbsp;public class ChooseYourLanguageScreenBase extends BaseScreen&lt;AppiumDriver&gt; {
+&nbsp;
+&nbsp;    @AndroidFindBy(uiAutomator = &quot;new UiSelector().resourceId(\&quot;in.amazon.mShop.android.shopping:id/continue_button\&quot;)&quot;)
+&nbsp;    private WebElement continueButton;
+&nbsp;
+&nbsp;    public ChooseYourLanguageScreenBase(final AppiumDriver driver) {
+<b class="fc">&nbsp;        super(driver);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void waitToLoad() {
+<b class="fc">&nbsp;        waitForElementToDisplay(continueButton, driver, 20);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void selectYourLanguage(final ChooseYourLanguage language) {
+<b class="fc">&nbsp;        driver.findElement(AppiumBy.accessibilityId(language.getLanguage())).click();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Taps on Continue button.
+&nbsp;     */
+&nbsp;    public void tapContinue() {
+<b class="fc">&nbsp;        continueButton.click();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-12 12:47</div>
+</div>
+</body>
+</html>

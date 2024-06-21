@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > BaseScreen</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.testing.mobile.screens</a>
+</div>
+
+<h1>Coverage Summary for Class: BaseScreen (com.testing.mobile.screens)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BaseScreen</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (8/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.testing.mobile.screens;
+&nbsp;
+&nbsp;import io.appium.java_client.AppiumDriver;
+&nbsp;import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+&nbsp;import java.time.Duration;
+&nbsp;import org.openqa.selenium.NotFoundException;
+&nbsp;import org.openqa.selenium.WebElement;
+&nbsp;import org.openqa.selenium.support.PageFactory;
+&nbsp;import org.openqa.selenium.support.ui.WebDriverWait;
+&nbsp;
+&nbsp;public abstract class BaseScreen&lt;D extends AppiumDriver&gt; {
+&nbsp;
+&nbsp;    final AppiumFieldDecorator decorator;
+&nbsp;
+&nbsp;    protected final D driver;
+&nbsp;
+<b class="fc">&nbsp;    public BaseScreen(final D driver) {</b>
+<b class="fc">&nbsp;        this.driver = driver;</b>
+<b class="fc">&nbsp;        this.decorator = new AppiumFieldDecorator(driver);</b>
+<b class="fc">&nbsp;        PageFactory.initElements(this.decorator, this);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public abstract void waitToLoad();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Waits for element to display.
+&nbsp;     *
+&nbsp;     * @param element element
+&nbsp;     * @param driver driver
+&nbsp;     * @param duration duration
+&nbsp;     */
+&nbsp;    public static void waitForElementToDisplay(final WebElement element, final AppiumDriver driver, final int duration) {
+<b class="fc">&nbsp;        getWait(driver, duration).until(myDriver -&gt; element.isDisplayed());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Gets wait.
+&nbsp;     *
+&nbsp;     * @param driver driver
+&nbsp;     * @param timeDuration time duration
+&nbsp;     * @return web driver wait
+&nbsp;     */
+&nbsp;    public static WebDriverWait getWait(final AppiumDriver driver, final int timeDuration) {
+<b class="fc">&nbsp;        return new WebDriverWait(driver, Duration.ofSeconds(timeDuration));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Gets driver.
+&nbsp;     *
+&nbsp;     * @return driver
+&nbsp;     */
+&nbsp;    public D getDriver() {
+<b class="fc">&nbsp;        return driver;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isDisplayed(final WebElement element) {
+&nbsp;        try {
+<b class="fc">&nbsp;            return element.isDisplayed();</b>
+<b class="nc">&nbsp;        } catch (NotFoundException exception) {</b>
+<b class="nc">&nbsp;            return false;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-12 12:47</div>
+</div>
+</body>
+</html>
