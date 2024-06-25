@@ -1,4 +1,10 @@
 package com.testing.mobile.screens.home;
 
-public class HomeScreenIOS {
+import io.appium.java_client.ios.IOSDriver;
+
+public class HomeScreenIOS extends HomeScreenBase {
+
+    public HomeScreenIOS(IOSDriver driver) {
+        super(driver);
+    }
 }

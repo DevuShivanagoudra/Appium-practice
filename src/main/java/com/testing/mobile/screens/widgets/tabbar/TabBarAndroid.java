@@ -1,2 +1,4 @@
-package com.testing.mobile.screens.widgets.tabbar;public class TabBarAndroid {
+package com.testing.mobile.screens.widgets.tabbar;
+
+public class TabBarAndroid {
 }
